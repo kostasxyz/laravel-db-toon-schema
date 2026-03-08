@@ -1,0 +1,60 @@
+{
+    "name": "kostasch/laravel-db-toon-schema",
+    "description": "Create a TOON schema of your DB",
+    "keywords": [
+        "kostasch",
+        "laravel-db-toon-schema"
+    ],
+    "homepage": "https://github.com/kostasxyz/laravel-db-toon-schema",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kostas Charalampidis",
+            "email": "xyzkostas@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/database": "^12.0",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.24",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kostasch\\LaravelDbToonSchema\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kostasch\\LaravelDbToonSchema\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kostasch\\LaravelDbToonSchema\\LaravelDbToonSchemaServiceProvider"
+            ],
+            "aliases": {
+                "LaravelDbToonSchema": "Kostasch\\LaravelDbToonSchema\\LaravelDbToonSchemaFacade"
+            }
+        }
+    }
+}
